@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: auto;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #222;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .result {
+            font-size: 1.8rem;
+            font-weight: 600;
+            padding: 25px;
+            border-radius: 14px;
+            margin-top: 25px;
+            display: inline-block;
+            width: 100%;
+            transition: transform 0.3s ease;
+        }
+
+        .result:hover {
+            transform: scale(1.02);
+        }
+
+        .high-risk {
+            background-color: #ffeaea;
+            color: #e74c3c;
+            border: 2px solid #e74c3c;
+        }
+
+        .low-risk {
+            background-color: #eaffea;
+            color: #2ecc71;
+            border: 2px solid #2ecc71;
+        }
+
+        .result i {
+            margin-right: 12px;
+        }
+
+        .recommendation {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            color: #555;
+            font-style: italic;
+            padding: 10px 15px;
+            background-color: #f3f3f3;
+            border-radius: 10px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 12px 30px;
+            font-size: 1rem;
+            color: #fff;
+            background: linear-gradient(to right, #4CAF50, #2e7d32);
+            border-radius: 50px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media screen and (max-height: 600px) {
+            body {
+                align-items: flex-start;
+                padding-top: 40px;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2> Drug User Risk Prediction</h2>
+
+        <div class="result {{ 'high-risk' if 'High Risk' in risk_level else 'low-risk' }}">
+            <i class="fas {{ 'fa-exclamation-triangle' if 'High Risk' in risk_level else 'fa-check-circle' }}"></i>
+            {{ risk_level }}
+        </div>
+
+        <div class="recommendation">
+            <p>{{ recommendation }}</p>
+        </div>
+
+        <a href="/"><i class="fas fa-redo-alt"></i> Try Another Prediction</a>
+    </div>
+
+</body>
+</html>
