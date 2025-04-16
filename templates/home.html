@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Drug Risk Predictor - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #001f3d; /* Deep Blue (Elam Neela) */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff; /* Text color set to white for contrast */
+      animation: backgroundFade 10s infinite alternate;
+      cursor: url('https://cdn-icons-png.flaticon.com/512/545/545682.png'), auto; /* Custom Cursor */
+    }
+
+    @keyframes backgroundFade {
+      0% { background: #001f3d; } /* Deep Blue */
+      100% { background: #003366; } /* Slightly Lighter Blue */
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      padding: 60px 40px;
+      border-radius: 30px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      max-width: 800px;
+      animation: fadeIn 1.2s ease-in-out, float 6s ease-in-out infinite;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 25px;
+      background: linear-gradient(to right, #ff4e50, #f9d423);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    .button {
+      display: inline-block;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      padding: 16px 40px;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 8px 20px rgba(0, 114, 255, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .button i {
+      margin-left: 10px;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(to right, #0072ff, #00c6ff);
+      box-shadow: 0 12px 25px rgba(0, 114, 255, 0.6);
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.95rem;
+      color: #fff; /* Changed to white */
+    }
+
+    footer a {
+      color: #fff; /* Ensuring link text in footer is also white */
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #0072ff;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1> Welcome to the Drug Use Risk Prediction System</h1>
+    <p>
+      This project leverages <strong>Machine Learning</strong> to evaluate the potential risk of drug use based on various psychological,
+      medical, and personal factors.
+      <br /><br />
+      Our goal is to raise <strong>awareness</strong> and help people make better choices through smart, data-driven technology.
+    </p>
+    <a href="/start" class="button">Start Prediction <i class="fas fa-arrow-right"></i></a>
+  </div>
+  <footer>
+    Made with 💙 by <a href="#">Sadiq</a>
+  </footer>
+</body>
+</html>

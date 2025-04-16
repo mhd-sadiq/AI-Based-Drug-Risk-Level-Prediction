@@ -8,7 +8,15 @@ app = Flask(__name__)
 model = pickle.load(open('random_forest_model.pkl', 'rb'))
 scaler = pickle.load(open('scaler.pkl', 'rb'))
 
-@app.route("/", methods=["GET", "POST"])
+@app.route("/", methods=["GET"])
+def home_redirect():
+    return render_template("home.html")
+
+@app.route("/home", methods=["GET"])
+def home():
+    return render_template("home.html")
+
+@app.route("/start", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
         return predict()
